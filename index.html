@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <!-- <ion-icon name="people"></ion-icon>
+    <ion-icon name="lock-open"></ion-icon>
+    <ion-icon name="lock-closed"></ion-icon>
+    <ion-icon name="person-circle"></ion-icon>
+    <ion-icon name="paper-plane-outline"></ion-icon> -->
+
+    <header>
+      <img src="img/logo_uol.png" alt="chat uol" />
+      <ion-icon name="people"></ion-icon>
+    </header>
+
+    <div class="messages-container">
+      <div class="message">
+        <p>
+          <span class="time">(09:21:45)</span>
+          <span class="user">João</span>
+          entra na sala...
+        </p>
+      </div>
+    </div>
+
+    <form class="submission-form">
+      <textarea
+        name="user-message"
+        rows="1"
+        placeholder="Escreva aqui..."
+      ></textarea>
+      <button name="send-message" type="submit">
+        <ion-icon name="paper-plane-outline"></ion-icon>
+      </button>
+    </form>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
