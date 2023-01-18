@@ -130,7 +130,7 @@ aside.open > .aside-bg {
     background: var(--gray-200);
 }
 
-.message.private {
+.message.private_message {
     background: var(--red-100);
 }
 /* END Message element */
