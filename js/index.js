@@ -1,6 +1,5 @@
-import { scheduledActions } from "./chat/chat.js";
+import { loadChat } from "./chat/chat.js";
 
-scheduledActions.messagesRefreshSchedule();
-scheduledActions.participantsRefreshSchedule();
+loadChat();
 
 export {};

@@ -46,9 +46,9 @@ function participantsRefreshSchedule() {
 }
 // END Participants
 
-const scheduledActions = {
-  participantsRefreshSchedule,
-  messagesRefreshSchedule,
-};
+function loadChat() {
+  participantsRefreshSchedule();
+  messagesRefreshSchedule();
+}
 
-export { scheduledActions };
+export { loadChat };
