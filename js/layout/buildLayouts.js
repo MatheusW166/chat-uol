@@ -26,4 +26,15 @@ function getToAndToPrefix(type, to) {
     `;
 }
 
-export { buildMessageLayout };
+function buildContactRadioLayout(user) {
+  const { name } = user;
+  return `
+  <label class="clickable">
+    <input type="radio" name="radio-contact" />
+    <ion-icon name="person-circle"></ion-icon>
+    <span>${name}</span>
+    <object data="img/checkmark.svg"></object>
+  </label>`;
+}
+
+export { buildMessageLayout, buildContactRadioLayout };
