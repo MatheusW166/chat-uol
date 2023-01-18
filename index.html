@@ -10,12 +10,6 @@
     <link rel="shortcut icon" href="./img/fav_icon.png" type="image/x-icon" />
   </head>
   <body>
-    <!-- <ion-icon name="people"></ion-icon>
-    <ion-icon name="lock-open"></ion-icon>
-    <ion-icon name="lock-closed"></ion-icon>
-    <ion-icon name="person-circle"></ion-icon>
-    <ion-icon name="paper-plane-outline"></ion-icon> -->
-
     <header>
       <img src="img/logo_uol.png" alt="chat uol" />
       <ion-icon class="clickable menu" name="people"></ion-icon>
@@ -32,7 +26,7 @@
           <h2>Escolha um contato para enviar mensagem:</h2>
           <div class="radio-container">
             <label class="clickable public">
-              <input type="radio" name="radio-contact" />
+              <input value="Todos" type="radio" name="radio-contact" />
               <ion-icon name="people"></ion-icon>
               <span>Todos</span>
               <object data="img/checkmark.svg"></object>
@@ -44,13 +38,13 @@
           <h2>Escolha a visibilidade:</h2>
           <div class="radio-container">
             <label class="clickable">
-              <input type="radio" name="radio-type" />
+              <input value="message" type="radio" name="radio-type" />
               <ion-icon name="lock-open"></ion-icon>
               <span>Público</span>
               <object data="img/checkmark.svg"></object>
             </label>
             <label class="clickable">
-              <input type="radio" name="radio-type" />
+              <input value="private_message" type="radio" name="radio-type" />
               <ion-icon name="lock-closed"></ion-icon>
               <span>Reservadamente</span>
               <object data="img/checkmark.svg"></object>

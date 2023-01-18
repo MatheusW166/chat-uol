@@ -29,6 +29,7 @@ body {
     font-family: var(--font-family);
 }
 
+/* Header */
 header {
     position: fixed;
     height: 80px;
@@ -46,6 +47,7 @@ header > ion-icon {
     font-size: 42px;
     cursor: pointer;
 }
+/* FIM Header */
 
 /* Aside */
 aside {
@@ -182,6 +184,11 @@ aside .options input {
     line-height: 20px;
 }
 
+.message > p {
+    white-space: none;
+    text-overflow: wrap;
+}
+
 .message > p .time {
     color: var(--gray-500);
     margin-right: 6px;
@@ -205,7 +212,7 @@ aside .options input {
 }
 /* END Message element */
 
-/* Send message element */
+/* Send message form */
 .submission-form {
     position: fixed;
     bottom: 0;
@@ -247,7 +254,7 @@ aside .options input {
 .submission-form > button ion-icon {
     font-size: 26px;
 }
-/* END Send message element */
+/* END Send message form */
 
 /* Loader */
 .loader {

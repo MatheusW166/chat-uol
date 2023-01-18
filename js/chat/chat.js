@@ -3,6 +3,7 @@ import {
   buildContactRadioLayout,
   buildMessageLayout,
 } from "../layout/buildLayouts.js";
+import { onClickAsideOptions } from "../events/index.js";
 
 // Messages
 function insertMessagesAndScrollBottom(messages, scroll = true) {
@@ -11,22 +12,19 @@ function insertMessagesAndScrollBottom(messages, scroll = true) {
   if (scroll) window.scrollTo(0, document.body.scrollHeight);
 }
 
-function refreshAndInsertMessages(scroll) {
-  chat
-    .getAllMessages()
-    .then((messages) => {
-      const allMessagesConcat = messages.reduce(
-        (prev, curr) => prev + buildMessageLayout(curr),
-        ""
-      );
-      insertMessagesAndScrollBottom(allMessagesConcat, scroll);
-    })
-    .catch((err) => console.log(err));
+async function refreshAndInsertMessages(scroll) {
+  const messages = await chat.getAllMessages();
+  const allMessagesConcat = messages.reduce(
+    (prev, curr) => prev + buildMessageLayout(curr),
+    ""
+  );
+  insertMessagesAndScrollBottom(allMessagesConcat, scroll);
 }
 
-refreshAndInsertMessages();
-setInterval(() => refreshAndInsertMessages(false), 3000);
-
+async function messagesRefreshSchedule() {
+  await refreshAndInsertMessages();
+  setInterval(() => refreshAndInsertMessages(false), 3000);
+}
 // END messages
 
 // Participants
@@ -35,21 +33,20 @@ function insertParticipants(participants) {
   participantsContainer.innerHTML = participants;
 }
 
-function refreshAndInsertParticipants() {
-  chat
-    .getAllUsers()
-    .then((users) => {
-      const allUsersConcat = users.reduce(
-        (prev, curr) => prev + buildContactRadioLayout(curr),
-        ""
-      );
-      insertParticipants(allUsersConcat);
-    })
-    .catch((err) => console.log(err));
+async function refreshAndInsertParticipants() {
+  const users = await chat.getAllUsers();
+  const allUsersConcat = users.reduce(
+    (prev, curr) => prev + buildContactRadioLayout(curr),
+    ""
+  );
+  insertParticipants(allUsersConcat);
+  onClickAsideOptions();
 }
 
-refreshAndInsertParticipants();
-setInterval(() => refreshAndInsertParticipants(), 10000);
+async function participantsRefreshSchedule() {
+  await refreshAndInsertParticipants();
+  setInterval(() => refreshAndInsertParticipants(), 10000);
+}
 // END Participants
 
-export {};
+export { participantsRefreshSchedule, messagesRefreshSchedule };

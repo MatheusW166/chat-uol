@@ -1,7 +1,8 @@
 const config = {
   type: "message",
   to: "Todos",
-  setType: (type) => (this.type = type),
+  setType: (type) => (config.type = type),
+  setTo: (to) => (config.to = to),
 };
 
 export { config };
