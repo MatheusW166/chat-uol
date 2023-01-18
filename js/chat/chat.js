@@ -1,8 +1,5 @@
 import { chat } from "../services/chatApiAdapter.js";
-import {
-  buildContactRadioLayout,
-  buildMessageLayout,
-} from "../layout/buildLayouts.js";
+import { layoutBuilder } from "../layout/buildLayouts.js";
 import { onClickAsideOptions } from "../events/index.js";
 
 // Messages
@@ -15,7 +12,7 @@ function insertMessagesAndScrollBottom(messages, scroll = true) {
 async function refreshAndInsertMessages(scroll) {
   const messages = await chat.getAllMessages();
   const allMessagesConcat = messages.reduce(
-    (prev, curr) => prev + buildMessageLayout(curr),
+    (prev, curr) => prev + layoutBuilder.buildMessageLayout(curr),
     ""
   );
   insertMessagesAndScrollBottom(allMessagesConcat, scroll);
@@ -36,7 +33,7 @@ function insertParticipants(participants) {
 async function refreshAndInsertParticipants() {
   const users = await chat.getAllUsers();
   const allUsersConcat = users.reduce(
-    (prev, curr) => prev + buildContactRadioLayout(curr),
+    (prev, curr) => prev + layoutBuilder.buildContactRadioLayout(curr),
     ""
   );
   insertParticipants(allUsersConcat);
@@ -49,4 +46,9 @@ function participantsRefreshSchedule() {
 }
 // END Participants
 
-export { participantsRefreshSchedule, messagesRefreshSchedule };
+const scheduledActions = {
+  participantsRefreshSchedule,
+  messagesRefreshSchedule,
+};
+
+export { scheduledActions };

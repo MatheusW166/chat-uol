@@ -37,4 +37,6 @@ function buildContactRadioLayout(user) {
   </label>`;
 }
 
-export { buildMessageLayout, buildContactRadioLayout };
+const layoutBuilder = { buildMessageLayout, buildContactRadioLayout };
+
+export { layoutBuilder };
