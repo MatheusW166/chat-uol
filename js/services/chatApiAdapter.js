@@ -1,8 +1,8 @@
 const baseUrl = "https://mock-api.driven.com.br/api/v6/uol";
 
-class ChatApiAdapter {
-  joinChat = (user) => {};
-  getAllUsers = async () => {
+const chat = {
+  joinChat: (user) => {},
+  getAllUsers: async () => {
     try {
       const res = await axios.get(baseUrl + "/participants");
       return res.data;
@@ -10,8 +10,8 @@ class ChatApiAdapter {
       console.log(`Deu ruim no getAllUsers rapaz\n${err}`);
       return [];
     }
-  };
-  getAllMessages = async () => {
+  },
+  getAllMessages: async () => {
     try {
       const res = await axios.get(baseUrl + "/messages");
       return res.data;
@@ -19,11 +19,9 @@ class ChatApiAdapter {
       console.log(`Deu ruim no getAllMessages rapaz\n${err}`);
       return [];
     }
-  };
-  sendMessage = (message) => {};
-  refreshStatus = (user) => {};
-}
-
-const chat = new ChatApiAdapter();
+  },
+  sendMessage: (message) => {},
+  refreshStatus: (user) => {},
+};
 
 export { chat };
