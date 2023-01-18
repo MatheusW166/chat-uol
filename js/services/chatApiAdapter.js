@@ -2,6 +2,7 @@ const baseUrl = "https://mock-api.driven.com.br/api/v6/uol";
 
 const chat = {
   joinChat: (user) => {},
+  refreshStatus: (user) => {},
   getAllUsers: async () => {
     try {
       const res = await axios.get(baseUrl + "/participants");
@@ -21,7 +22,6 @@ const chat = {
     }
   },
   sendMessage: (message) => {},
-  refreshStatus: (user) => {},
 };
 
 export { chat };
