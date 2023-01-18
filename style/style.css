@@ -44,6 +44,7 @@ header {
 
 header > ion-icon {
     font-size: 42px;
+    cursor: pointer;
 }
 
 /* Message element */
@@ -127,6 +128,7 @@ header > ion-icon {
     padding: 0;
     line-height: 0;
     height: 100%;
+    cursor: pointer;
 }
 
 .submission-form > button ion-icon {
@@ -200,3 +202,12 @@ header > ion-icon {
     }
 }
 /* END Loader */
+
+/* UX */
+.clickable:hover {
+    opacity: 0.6;
+}
+.clickable:active {
+    opacity: 0.4;
+}
+/* END UX */
