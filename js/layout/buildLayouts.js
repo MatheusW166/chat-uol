@@ -3,7 +3,7 @@ function buildMessageLayout(message) {
   return `
     <div class="message ${type}">
         <p>
-            <span class="time">(${time})</span>
+            <span class="time">(${time.substring(0, 5)})</span>
             <span class="user">${from}</span>
             ${getToAndToPrefix(type, to)}
             ${text}

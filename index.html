@@ -27,7 +27,50 @@
 
     <aside>
       <div class="aside-bg"></div>
-      <div class="aside-content"></div>
+      <div class="aside-content">
+        <div class="options">
+          <h2>Escolha um contato para enviar mensagem:</h2>
+          <div class="radio-container">
+            <div class="contacts">
+              <label class="clickable">
+                <input type="radio" name="radio-contact" />
+                <ion-icon name="people"></ion-icon>
+                <span>Todos</span>
+                <object data="img/checkmark.svg"></object>
+              </label>
+              <label class="clickable">
+                <input type="radio" name="radio-contact" />
+                <ion-icon name="person-circle"></ion-icon>
+                <span>João</span>
+                <object data="img/checkmark.svg"></object>
+              </label>
+            </div>
+            <label class="clickable">
+              <input type="radio" name="radio-contact" />
+              <ion-icon name="person-circle"></ion-icon>
+              <span>Maria</span>
+              <object data="img/checkmark.svg"></object>
+            </label>
+          </div>
+        </div>
+        <div class="options">
+          <h2>Escolha a visibilidade:</h2>
+          <div class="radio-container">
+            <label class="clickable">
+              <input type="radio" name="radio-type" />
+              <ion-icon name="lock-open"></ion-icon>
+              <span>Público</span>
+              <object data="img/checkmark.svg"></object>
+            </label>
+            <label class="clickable">
+              <input type="radio" name="radio-type" />
+              <ion-icon name="lock-closed"></ion-icon>
+              <span>Reservadamente</span>
+              <object data="img/checkmark.svg"></object>
+            </label>
+          </div>
+        </div>
+      </div>
     </aside>
 
     <form class="submission-form">
