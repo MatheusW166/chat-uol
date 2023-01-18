@@ -3,7 +3,7 @@ import {
   participantsRefreshSchedule,
 } from "./chat/chat.js";
 
-await messagesRefreshSchedule();
-await participantsRefreshSchedule();
+messagesRefreshSchedule();
+participantsRefreshSchedule();
 
 export {};

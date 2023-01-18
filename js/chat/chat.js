@@ -21,8 +21,8 @@ async function refreshAndInsertMessages(scroll) {
   insertMessagesAndScrollBottom(allMessagesConcat, scroll);
 }
 
-async function messagesRefreshSchedule() {
-  await refreshAndInsertMessages();
+function messagesRefreshSchedule() {
+  refreshAndInsertMessages();
   setInterval(() => refreshAndInsertMessages(false), 3000);
 }
 // END messages
@@ -43,8 +43,8 @@ async function refreshAndInsertParticipants() {
   onClickAsideOptions();
 }
 
-async function participantsRefreshSchedule() {
-  await refreshAndInsertParticipants();
+function participantsRefreshSchedule() {
+  refreshAndInsertParticipants();
   setInterval(() => refreshAndInsertParticipants(), 10000);
 }
 // END Participants

@@ -10,19 +10,14 @@ function onClickAsideOptions() {
 
   inputsMessageTo.forEach((input) => {
     input.onchange = (e) => {
-      if (e.target.checked) {
-        config.setTo(e.target.value);
-        console.log(config);
-      }
+      if (e.target.checked) config.setTo(e.target.value);
     };
+    input.checked = input.value === config.to;
   });
 
   inputsMessageType.forEach((input) => {
     input.onchange = (e) => {
-      if (e.target.checked) {
-        config.setType(e.target.value);
-        console.log(config);
-      }
+      if (e.target.checked) config.setType(e.target.value);
     };
   });
 }
