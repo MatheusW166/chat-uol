@@ -19,6 +19,7 @@ function onClickAsideOptions() {
     input.onchange = (e) => {
       if (e.target.checked) config.setType(e.target.value);
     };
+    input.checked = input.value === config.type;
   });
 }
 
