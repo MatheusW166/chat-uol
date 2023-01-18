@@ -29,10 +29,6 @@ body {
     font-family: var(--font-family);
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
 header {
     position: fixed;
     height: 80px;
@@ -70,16 +66,18 @@ header > ion-icon {
     line-height: 20px;
 }
 
-.message > p span {
+.message > p .time {
+    color: var(--gray-500);
     margin-right: 6px;
 }
 
-.message > p .time {
-    color: var(--gray-500);
+.message > p .user,
+.message > p .to {
+    font-weight: 700;
 }
 
-.message > p .user {
-    font-weight: 700;
+.message > p .to {
+    margin-right: 6px;
 }
 
 .message.status {
