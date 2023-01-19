@@ -15,6 +15,7 @@
     --gray-600: #696969;
     --gray-700: #505050;
     --red-100: #ffdede;
+    --red-300: #ff6c6c;
     --green-500: #28bb25;
     /* Font */
     --font-family: "Roboto", sans-serif;
@@ -26,6 +27,10 @@
 
 .hidden {
     display: none !important;
+}
+
+.error {
+    border: solid 2px var(--red-300) !important;
 }
 
 body {
@@ -70,11 +75,11 @@ body {
     font-size: 18px;
     font-family: var(--font-family);
     padding: 0 8px;
+    text-align: center;
 }
 
 .login > form input::placeholder {
     color: var(--gray-400);
-    text-align: center;
 }
 
 .login > form button {

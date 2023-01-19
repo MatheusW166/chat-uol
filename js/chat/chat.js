@@ -1,6 +1,7 @@
 import { chat } from "../services/chatApiAdapter.js";
 import { layoutBuilder } from "../layout/buildLayouts.js";
 import { onClickAsideOptions } from "../events/index.js";
+import { isError } from "../errors/errors.js";
 
 // Messages
 function insertMessagesAndScrollBottom(messages, scroll = true) {
@@ -46,9 +47,25 @@ function participantsRefreshSchedule() {
 }
 // END Participants
 
-function loadChat() {
+// Keep conection
+async function keepConection(user) {
+  const res = await chat.refreshStatus(user);
+  if (isError(res)) {
+    alert("Você foi desconectado do chat, saindo...");
+    window.location.reload();
+  }
+}
+
+function keepConectionSchedule(user) {
+  keepConection(user);
+  setInterval(() => keepConection(user), 5000);
+}
+// END Keep conection
+
+function loadChat(user) {
   participantsRefreshSchedule();
   messagesRefreshSchedule();
+  keepConectionSchedule(user);
 }
 
 export { loadChat };

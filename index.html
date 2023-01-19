@@ -11,21 +11,26 @@
   </head>
   <body>
     <!-- Login -->
-    <div class="login hidden">
+    <div class="login">
       <img src="img/logo_uol_lg.png" alt="chat uol" />
       <div class="loading hidden">
         <span class="loader"></span>
         <p>Entrando...</p>
       </div>
       <form>
-        <input type="text" class="user-name" placeholder="Digite seu nome" />
-        <button class="clickable" type="submit">Entrar</button>
+        <input
+          name="user-name"
+          type="text"
+          class="user-name"
+          placeholder="Digite seu nome"
+        />
+        <button name="login-button" class="clickable" type="submit">Entrar</button>
       </form>
     </div>
     <!-- END Login -->
 
     <!-- Chat -->
-    <div class="chat">
+    <div class="chat hidden">
       <header>
         <img src="img/logo_uol.png" alt="chat uol" />
         <ion-icon class="clickable menu" name="people"></ion-icon>

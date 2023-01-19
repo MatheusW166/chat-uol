@@ -1,5 +1,3 @@
-import { loadChat } from "./chat/chat.js";
-
-loadChat();
+import {} from "./chat/joinChat.js";
 
 export {};

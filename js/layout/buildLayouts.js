@@ -1,3 +1,5 @@
+import { config } from "../chat/chatConfigs.js";
+
 function buildMessageLayout(message) {
   const { from, to, type, text, time } = message;
   return `
@@ -28,6 +30,7 @@ function getToAndToPrefix(type, to) {
 
 function buildContactRadioLayout(user) {
   const { name } = user;
+  if (name === config.user?.name) return "";
   return `
   <label class="clickable">
     <input value="${name}" type="radio" name="radio-contact" />
