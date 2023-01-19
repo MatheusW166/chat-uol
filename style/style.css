@@ -259,11 +259,13 @@ aside .options input {
     font-size: 14px;
     color: var(--black);
     line-height: 20px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .message > p {
-    white-space: none;
-    text-overflow: wrap;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .message > p .time {
