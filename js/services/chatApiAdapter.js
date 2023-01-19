@@ -35,7 +35,14 @@ const chat = {
       return getError(err.response.status);
     }
   },
-  sendMessage: (message) => {},
+  sendMessage: async (message) => {
+    try {
+      const res = await axios.post(baseUrl + "/messages", { ...message });
+      return res.data;
+    } catch (err) {
+      return getError(err.response.status);
+    }
+  },
 };
 
 export { chat };

@@ -1,3 +1,3 @@
-import {} from "./chat/joinChat.js";
+import {} from "./events/index.js";
 
 export {};
