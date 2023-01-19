@@ -29,7 +29,7 @@ function showElement(element) {
   element.classList.remove("hidden");
 }
 
-async function logIn(nameInput) {
+async function tryLogin(nameInput) {
   const userName = nameInput.value;
 
   if (!isNameValid(userName)) {
@@ -55,4 +55,4 @@ async function logIn(nameInput) {
   loadChat(myUser);
 }
 
-export { logIn };
+export { tryLogin };

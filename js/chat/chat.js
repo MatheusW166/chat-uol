@@ -4,6 +4,7 @@ import { onClickAsideOptions } from "../events/index.js";
 import { isError } from "../errors/errors.js";
 
 // Messages
+const MESSAGE_REFRESH_INTERVAL = 3 * 1000;
 function insertMessagesAndScrollBottom(messages, scroll = true) {
   const container = document.querySelector(".messages-container");
   container.innerHTML = messages;
@@ -21,11 +22,12 @@ async function refreshAndInsertMessages(scroll) {
 
 function messagesRefreshSchedule() {
   refreshAndInsertMessages();
-  setInterval(() => refreshAndInsertMessages(false), 3000);
+  setInterval(() => refreshAndInsertMessages(false), MESSAGE_REFRESH_INTERVAL);
 }
 // END messages
 
 // Participants
+const PARTICIPANTS_REFRESH_INTERVAL = 10 * 1000;
 function insertParticipants(participants) {
   const participantsContainer = document.querySelector("aside .contacts");
   participantsContainer.innerHTML = participants;
@@ -43,11 +45,15 @@ async function refreshAndInsertParticipants() {
 
 function participantsRefreshSchedule() {
   refreshAndInsertParticipants();
-  setInterval(() => refreshAndInsertParticipants(), 10000);
+  setInterval(
+    () => refreshAndInsertParticipants(),
+    PARTICIPANTS_REFRESH_INTERVAL
+  );
 }
 // END Participants
 
 // Keep conection
+const KEEP_CONECTION_INTERVAL = 5 * 1000;
 async function keepConection(user) {
   const res = await chat.refreshStatus(user);
   if (isError(res)) {
@@ -58,7 +64,7 @@ async function keepConection(user) {
 
 function keepConectionSchedule(user) {
   keepConection(user);
-  setInterval(() => keepConection(user), 5000);
+  setInterval(() => keepConection(user), KEEP_CONECTION_INTERVAL);
 }
 // END Keep conection
 
@@ -68,4 +74,4 @@ function loadChat(user) {
   keepConectionSchedule(user);
 }
 
-export { loadChat };
+export { loadChat, refreshAndInsertMessages };
