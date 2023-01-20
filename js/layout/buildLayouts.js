@@ -3,7 +3,7 @@ import { config } from "../chat/chatConfigs.js";
 function buildMessageLayout(message) {
   const { from, to, type, text, time } = message;
   return `
-    <div class="message ${type}">
+    <div data-test="message" class="message ${type}">
         <p>
             <span class="time">(${time.substring(0, 5)})</span>
             <span class="user">${from}</span>
@@ -32,11 +32,11 @@ function buildContactRadioLayout(user) {
   const { name } = user;
   if (name === config.user?.name) return "";
   return `
-  <label class="clickable">
+  <label data-test="participant" class="clickable">
     <input value="${name}" type="radio" name="radio-contact" />
     <ion-icon name="person-circle"></ion-icon>
     <span>${name}</span>
-    <object data="img/checkmark.svg"></object>
+    <object data-test="check" data="img/checkmark.svg"></object>
   </label>`;
 }
 

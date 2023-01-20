@@ -19,12 +19,18 @@
       </div>
       <form>
         <input
+          data-test="input-name"
           name="user-name"
           type="text"
           class="user-name"
           placeholder="Digite seu nome"
         />
-        <button name="login-button" class="clickable" type="submit">
+        <button
+          data-test="send-name"
+          name="login-button"
+          class="clickable"
+          type="submit"
+        >
           Entrar
         </button>
       </form>
@@ -35,7 +41,11 @@
     <div class="chat hidden">
       <header>
         <img src="img/logo_uol.png" alt="chat uol" />
-        <ion-icon class="clickable menu" name="people"></ion-icon>
+        <ion-icon
+          data-test="open-participants"
+          class="clickable menu"
+          name="people"
+        ></ion-icon>
       </header>
 
       <div class="messages-container">
@@ -43,16 +53,16 @@
       </div>
 
       <aside>
-        <div class="aside-bg"></div>
+        <div data-test="overlay" class="aside-bg"></div>
         <div class="aside-content">
           <div class="options">
             <h2>Escolha um contato para enviar mensagem:</h2>
             <div class="radio-container">
-              <label class="clickable public">
+              <label data-test="all" class="clickable public">
                 <input value="Todos" type="radio" name="radio-contact" />
                 <ion-icon name="people"></ion-icon>
                 <span>Todos</span>
-                <object data="img/checkmark.svg"></object>
+                <object data-test="check" data="img/checkmark.svg"></object>
               </label>
               <div class="contacts"></div>
             </div>
@@ -60,17 +70,17 @@
           <div class="options">
             <h2>Escolha a visibilidade:</h2>
             <div class="radio-container">
-              <label class="clickable">
+              <label data-test="public" class="clickable">
                 <input value="message" type="radio" name="radio-type" />
                 <ion-icon name="lock-open"></ion-icon>
                 <span>Público</span>
-                <object data="img/checkmark.svg"></object>
+                <object data-test="check" data="img/checkmark.svg"></object>
               </label>
-              <label class="clickable">
+              <label data-test="private" class="clickable">
                 <input value="private_message" type="radio" name="radio-type" />
                 <ion-icon name="lock-closed"></ion-icon>
                 <span>Reservadamente</span>
-                <object data="img/checkmark.svg"></object>
+                <object data-test="check" data="img/checkmark.svg"></object>
               </label>
             </div>
           </div>
@@ -80,13 +90,19 @@
       <form class="submission-form">
         <div class="textarea">
           <textarea
+            data-test="input-message"
             name="user-message"
             rows="1"
             placeholder="Escreva aqui..."
           ></textarea>
-          <p class="to-type hidden"></p>
+          <p data-test="recipient" class="to-type hidden"></p>
         </div>
-        <button class="clickable" name="send-message" type="submit">
+        <button
+          data-test="send-message"
+          class="clickable"
+          name="send-message"
+          type="submit"
+        >
           <ion-icon name="paper-plane-outline"></ion-icon>
         </button>
       </form>
