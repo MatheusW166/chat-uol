@@ -305,7 +305,20 @@ aside .options input {
     padding: 0 18px;
 }
 
-.submission-form > textarea {
+.submission-form > .textarea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.submission-form > .textarea p {
+    font-size: 14px;
+    color: var(--gray-700);
+    font-weight: 300;
+}
+
+.submission-form textarea {
     outline: none;
     border: none;
     resize: none;
@@ -316,12 +329,12 @@ aside .options input {
     font-family: var(--font-family);
 }
 
-.submission-form > textarea::placeholder {
+.submission-form textarea::placeholder {
     font-style: italic;
     color: inherit;
 }
 
-.submission-form > button {
+.submission-form button {
     background: transparent;
     outline: none;
     border: none;
@@ -330,7 +343,7 @@ aside .options input {
     cursor: pointer;
 }
 
-.submission-form > button ion-icon {
+.submission-form button ion-icon {
     font-size: 26px;
 }
 /* END Send message form */

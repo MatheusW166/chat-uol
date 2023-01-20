@@ -25,4 +25,4 @@ const config = {
   setUser: (user) => (config.user = user),
 };
 
-export { config, TO_TODOS };
+export { config, TO_TODOS, MSG_TYPES };
