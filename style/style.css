@@ -217,13 +217,13 @@ aside .options label div {
     transform: scale(0);
     opacity: 0;
     transition: opacity ease 0.3s, transform ease 0.4s;
-    display: none;
+    visibility: hidden;
 }
 
 aside .options label:has(input:checked) div {
     opacity: 1;
     transform: scale(1);
-    display: initial;
+    visibility: visible;
 }
 
 aside .options label span {
