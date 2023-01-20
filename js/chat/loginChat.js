@@ -30,7 +30,7 @@ function showElement(element) {
 }
 
 async function tryLogin(nameInput) {
-  const userName = nameInput.value;
+  const userName = nameInput.value?.trim();
 
   if (!isNameValid(userName)) {
     addErrorClass(nameInput);
