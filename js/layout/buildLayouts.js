@@ -36,23 +36,7 @@ function buildContactRadioLayout(user) {
     <input value="${name}" type="radio" name="radio-contact" />
     <ion-icon name="person-circle"></ion-icon>
     <span>${name}</span>
-    <svg
-        data-test="check"
-        style="cursor: pointer"
-        width="13"
-        height="11"
-        viewBox="0 0 13 11"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M11 2L4.7 9L2 6.375"
-          stroke="#28BB25"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+    <ion-icon data-test="check" name="checkmark"></ion-icon>
   </label>`;
 }
 

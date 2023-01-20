@@ -212,18 +212,19 @@ aside .options label ion-icon {
     font-size: 22px;
 }
 
-aside .options label svg {
+aside .options label ion-icon:last-of-type {
     margin-left: auto;
     transform: scale(0);
     opacity: 0;
     transition: opacity ease 0.3s, transform ease 0.4s;
-    visibility: hidden;
+    color: var(--green-500);
+    display: none;
 }
 
-aside .options label:has(input:checked) svg {
+aside .options label:has(input:checked) ion-icon:last-of-type {
     opacity: 1;
     transform: scale(1);
-    visibility: visible;
+    display: initial;
 }
 
 aside .options label span {
