@@ -212,7 +212,7 @@ aside .options label ion-icon {
     font-size: 22px;
 }
 
-aside .options label object {
+aside .options label div {
     margin-left: auto;
     transform: scale(0);
     opacity: 0;
@@ -220,7 +220,7 @@ aside .options label object {
     display: none;
 }
 
-aside .options label:has(input:checked) object {
+aside .options label:has(input:checked) div {
     opacity: 1;
     transform: scale(1);
     display: initial;
