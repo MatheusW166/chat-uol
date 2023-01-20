@@ -2,6 +2,7 @@ import { chat } from "../services/chatApiAdapter.js";
 import { layoutBuilder } from "../layout/buildLayouts.js";
 import { onClickAsideOptions } from "../events/index.js";
 import { isError } from "../errors/errors.js";
+import { config } from "./chatConfigs.js";
 
 // Messages
 const MESSAGE_REFRESH_INTERVAL = 3 * 1000;
@@ -12,7 +13,7 @@ function insertMessagesAndScrollBottom(messages, scroll = true) {
 }
 
 async function refreshAndInsertMessages(scroll) {
-  const messages = await chat.getAllMessages();
+  const messages = await chat.getAllMessages(config.user);
   const allMessagesConcat = messages.reduce(
     (prev, curr) => prev + layoutBuilder.buildMessageLayout(curr),
     ""
