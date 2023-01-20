@@ -1,5 +1,9 @@
 import { config } from "../chat/chatConfigs.js";
 
+function setMessageSettingsDescription(){
+  
+}
+
 function onClickAsideOptions() {
   const inputsMessageTo = document.querySelectorAll(
     "aside .options:nth-of-type(1) .radio-container input"

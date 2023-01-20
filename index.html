@@ -24,7 +24,9 @@
           class="user-name"
           placeholder="Digite seu nome"
         />
-        <button name="login-button" class="clickable" type="submit">Entrar</button>
+        <button name="login-button" class="clickable" type="submit">
+          Entrar
+        </button>
       </form>
     </div>
     <!-- END Login -->
@@ -76,11 +78,14 @@
       </aside>
 
       <form class="submission-form">
-        <textarea
-          name="user-message"
-          rows="1"
-          placeholder="Escreva aqui..."
-        ></textarea>
+        <div class="textarea">
+          <textarea
+            name="user-message"
+            rows="1"
+            placeholder="Escreva aqui..."
+          ></textarea>
+          <p class="to-type">Enviando para Maria (reservadamente)</p>
+        </div>
         <button class="clickable" name="send-message" type="submit">
           <ion-icon name="paper-plane-outline"></ion-icon>
         </button>
