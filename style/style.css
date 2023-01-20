@@ -212,7 +212,7 @@ aside .options label ion-icon {
     font-size: 22px;
 }
 
-aside .options label div {
+aside .options label svg {
     margin-left: auto;
     transform: scale(0);
     opacity: 0;
@@ -220,7 +220,7 @@ aside .options label div {
     visibility: hidden;
 }
 
-aside .options label:has(input:checked) div {
+aside .options label:has(input:checked) svg {
     opacity: 1;
     transform: scale(1);
     visibility: visible;

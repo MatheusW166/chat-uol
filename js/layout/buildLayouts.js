@@ -36,8 +36,7 @@ function buildContactRadioLayout(user) {
     <input value="${name}" type="radio" name="radio-contact" />
     <ion-icon name="person-circle"></ion-icon>
     <span>${name}</span>
-    <div>
-      <svg
+    <svg
         data-test="check"
         style="cursor: pointer"
         width="13"
@@ -54,7 +53,6 @@ function buildContactRadioLayout(user) {
           stroke-linejoin="round"
         />
       </svg>
-    </div>
   </label>`;
 }
 
