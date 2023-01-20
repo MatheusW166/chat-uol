@@ -34,7 +34,6 @@ async function tryLogin(nameInput) {
 
   if (!isNameValid(userName)) {
     addErrorClass(nameInput);
-    alert("Coloque um nome válido.");
     return;
   }
 
@@ -45,7 +44,6 @@ async function tryLogin(nameInput) {
 
   if (isError(response)) {
     addErrorClass(nameInput);
-    alert(response.error);
     return;
   }
 

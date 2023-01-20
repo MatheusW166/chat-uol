@@ -22,14 +22,15 @@ async function trySendMessage(chatInput) {
   const messageText = chatInput.value?.trim();
   cleanInput(chatInput);
 
-  if (!messageText) return;
+  if (!messageText) {
+    return;
+  }
   const message = buildMessage(messageText, config);
-
   const res = await chat.sendMessage(message);
 
   if (isError(res)) {
-    alert("Você não está mais conectado, retornando...");
     window.location.reload();
+    return;
   }
 
   refreshAndInsertMessages();
