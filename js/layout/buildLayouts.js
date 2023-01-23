@@ -32,12 +32,11 @@ function buildContactRadioLayout(user) {
   const { name } = user;
   if (name === config.user?.name) return "";
   return `
-  <label data-test="participant" class="clickable">
-    <input value="${name}" type="radio" name="radio-contact" />
+  <div data-test="participant" class="option clickable">
     <ion-icon name="person-circle"></ion-icon>
     <span>${name}</span>
     <ion-icon data-test="check" name="checkmark"></ion-icon>
-  </label>`;
+  </div>`;
 }
 
 const layoutBuilder = { buildMessageLayout, buildContactRadioLayout };

@@ -17,28 +17,64 @@ function setMessageSettingsDescription({ to, type }) {
   toType.innerHTML = `Enviando para ${to} (${getMessageTypeDescription(type)})`;
 }
 
+const CLASS_CHECKED = "checked";
+function unCheckAll(elements) {
+  elements.forEach((e) => e.classList.remove(CLASS_CHECKED));
+}
+function addCheckClass(element) {
+  element.classList.add(CLASS_CHECKED);
+}
+function hasCheckedClass(element) {
+  return Array.from(element.classList).includes(CLASS_CHECKED);
+}
+function convertType(type) {
+  if (type === "Reservadamente") {
+    return "private_message";
+  }
+  return "message";
+}
+function getSpanInnerHtmlFromParent(parent) {
+  return parent.querySelector("span").innerHTML;
+}
+
 function onClickAsideOptions() {
-  const inputsMessageTo = document.querySelectorAll(
-    "aside .options:nth-of-type(1) .radio-container input"
+  const optionsMessageTo = document.querySelectorAll(
+    "aside .options:nth-of-type(1) .radio-container .option"
   );
-  const inputsMessageType = document.querySelectorAll(
-    "aside .options:nth-of-type(2) .radio-container input"
+  const optionsMessageType = document.querySelectorAll(
+    "aside .options:nth-of-type(2) .radio-container .option"
   );
 
-  inputsMessageTo.forEach((input) => {
-    input.onchange = (e) => {
-      if (e.target.checked) config.setTo(e.target.value);
-      setMessageSettingsDescription({ to: e.target.value, type: config.type });
+  optionsMessageTo.forEach((option) => {
+    option.onclick = (e) => {
+      const element = e.currentTarget;
+      const to = getSpanInnerHtmlFromParent(element);
+      if (hasCheckedClass(element)) return;
+      unCheckAll(optionsMessageTo);
+      addCheckClass(element);
+      config.setTo(to);
+      setMessageSettingsDescription({ to: to, type: config.type });
     };
-    input.checked = input.value === config.to;
+    if (config.to === getSpanInnerHtmlFromParent(option)) {
+      unCheckAll(optionsMessageTo);
+      addCheckClass(option);
+    }
   });
 
-  inputsMessageType.forEach((input) => {
-    input.onchange = (e) => {
-      if (e.target.checked) config.setType(e.target.value);
-      setMessageSettingsDescription({ to: config.to, type: e.target.value });
+  optionsMessageType.forEach((option) => {
+    option.onclick = (e) => {
+      const element = e.currentTarget;
+      const type = convertType(getSpanInnerHtmlFromParent(element));
+      if (hasCheckedClass(element)) return;
+      unCheckAll(optionsMessageType);
+      addCheckClass(element);
+      config.setType(type);
+      setMessageSettingsDescription({ to: config.to, type: type });
     };
-    input.checked = input.value === config.type;
+    if (config.type === convertType(getSpanInnerHtmlFromParent(option))) {
+      unCheckAll(optionsMessageType);
+      addCheckClass(option);
+    }
   });
 }
 
