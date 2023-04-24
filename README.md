@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/MatheusW166/chat-uol/blob/main/LICENCE)
+
 # Bate Papo UOL
 
 A aplicação é um chat de grupo em tempo real, inspirado no famoso chat da UOL. Ele foi criado com Vanilla Javascript, com uma API pública feita pela [Driven](https://www.driven.com.br/).
